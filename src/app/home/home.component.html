@@ -1,0 +1,22 @@
+<p>home works!</p>
+<button (click)="displaydata()">get data</button>
+<div class="row text-center">
+    <div class="col">
+        <h3>USERNAME</h3>
+    </div>
+    <div class="col">
+        <h3>PASSWORD</h3>
+    </div>
+</div>
+<div class="row text-center ">
+    <div class="col">
+        <ul>
+            <li *ngFor="let i of usernames">{{i}}</li>
+        </ul>
+    </div>
+    <div class="col">
+        <ul>
+            <li *ngFor="let j of passwords">{{j}}</li>
+        </ul>
+    </div>
+</div>

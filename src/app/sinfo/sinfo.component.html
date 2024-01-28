@@ -1,0 +1,17 @@
+<p class="container-fluid bg-success m-0 p-2 border border-3 text-center border-bottom">sinfo works!</p>
+<form #frm="ngForm" (ngSubmit)="updateinfo(frm)">
+    <input type="text" name="location" value="" ngModel placeholder="input"> 
+    <button type="submit" name="button">add info</button>
+</form>
+<button (click)="getsinfo1()" class="btn btn-primary">info1</button>
+<ul>
+    <li *ngFor="let i of sinfo1">{{i}}</li>
+</ul>
+<button (click)="getsinfo2()" class="btn btn-primary">info2</button>
+<ul>
+    <li *ngFor="let j of sinfo2">{{j}}</li>
+</ul>
+<button (click)="getsinfo3()" class="btn btn-primary">info3</button>
+<ul>
+    <li *ngFor="let k of sinfo3">{{k}}</li>
+</ul>

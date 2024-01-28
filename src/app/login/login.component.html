@@ -1,0 +1,36 @@
+<p>login works!</p>
+<div class="container-fluid text-center bg-success">
+    <h5>{{message}}</h5>
+</div>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="text-center">Login</h3>
+                </div>
+                <div class="card-body">
+                    <form #frm="ngForm" (submit)="adduser(frm)">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" #name="ngModel" ngModel name="username" minlength="2" maxlength="10" required class="form-control" id="username" placeholder="Enter your username" >
+                            <div *ngIf="name.touched && name.invalid">
+                                <h5>Invalid Username</h5>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" minlength="8" maxlength="16" ngModel required #pass="ngModel" name="password" class="form-control" id="password" placeholder="Enter your password">
+                            <div *ngIf="pass.touched && pass.invalid">
+                                <h5>Invalid Password</h5>
+                            </div>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
