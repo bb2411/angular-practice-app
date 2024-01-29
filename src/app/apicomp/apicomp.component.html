@@ -1,0 +1,15 @@
+<p>apicomp works!</p>
+<button (click)="printdata()">Call API</button>
+<div class="row">
+    <p class="col">name</p>
+    <p class="col">email</p>
+    <p class="col">password</p>
+  </div>
+<div *ngFor="let user of usertable">
+  <div class="row">
+    <p class="col">{{ user.name }}</p>
+    <p class="col">{{ user.email }}</p>
+    <p class="col">{{ user.pass }}</p>
+  </div>
+</div>
+<h1>bhargav bhatt</h1>

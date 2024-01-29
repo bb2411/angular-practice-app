@@ -13,6 +13,8 @@ import { StrrevPipe } from './strrev.pipe';
 import { PipesComponent } from './pipes/pipes.component';
 import { StdDataService } from './std-data.service';
 import { SdataService } from './sdata.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ApicompComponent } from './apicomp/apicomp.component';
 
 @NgModule({
   declarations: [
@@ -24,9 +26,11 @@ import { SdataService } from './sdata.service';
     LoginComponent,
     NavbarComponent,
     StrrevPipe,
-    PipesComponent
+    PipesComponent,
+    ApicompComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule
