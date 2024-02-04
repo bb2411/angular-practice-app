@@ -1,0 +1,23 @@
+<form #frm="ngForm" (ngSubmit)="getpdf(frm)">
+    <div class="form-floating mb-3 mt-3">
+        <input type="text" #name="ngModel" id="name" required class="form-control" name="name" placeholder="name" ngModel>
+        <label for="name">name:</label>
+        <div *ngIf="name.touched && name.invalid">
+            <h5 class="bg-alert alert">Invalid</h5>
+        </div>
+    </div>
+    <div class="form-floating mb-3 mt-3">
+        <input type="number" id="sem" #sem="ngModel" minlength="1" maxlength="1" required class="form-control" name="sem" ngModel>
+        <label for="sem">sem</label>
+        <div *ngIf="sem.touched && sem.invalid">
+            <h5 class="bg-alert alert">Invalid</h5>
+        </div>
+    </div>
+    <div *ngIf="sem.invalid || name.invalid;else valid">
+        <button type="submit" class="btn btn-primary" disabled>Submit</button>
+    </div>
+    <ng-template #valid>
+        <button mat-raised-button color="primary" type="submit" >Submit</button>
+    </ng-template>
+</form> 
+    <a [href]="link" download="generated.pdf">download</a>

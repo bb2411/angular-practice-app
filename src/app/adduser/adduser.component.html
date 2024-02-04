@@ -1,0 +1,25 @@
+<form #frm="ngForm" (ngSubmit)="adduser(frm)">
+    <div class="form-floating mb-3 mt-3">
+        <input type="text" #name="ngModel" id="name" required class="form-control" name="name" placeholder="name" ngModel>
+        <label for="name">name:</label>
+        <div *ngIf="name.touched && name.invalid">
+            <h5 class="bg-alert alert">Invalid</h5>
+        </div>
+    </div>
+    <div class="form-floating mb-3 mt-3">
+        <input type="text" id="password" #pass="ngModel" minlength="8" maxlength="12" required class="form-control" name="password" ngModel>
+        <label for="password">password</label>
+        <div *ngIf="pass.touched && pass.invalid">
+            <h5 class="bg-alert alert">Invalid</h5>
+        </div>
+    </div>
+    <div *ngIf="pass.invalid || name.invalid;else valid">
+        <button type="submit" class="btn btn-primary" disabled>Submit</button>
+    </div>
+    <ng-template #valid>
+        <button mat-raised-button color="primary" type="submit" >Submit</button>
+    </ng-template>
+</form>
+<div>{{msg?.status}}</div>
+<div>{{msg?.message}}</div>
+<div>{{msg}}</div>

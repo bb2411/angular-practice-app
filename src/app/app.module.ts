@@ -15,6 +15,10 @@ import { StdDataService } from './std-data.service';
 import { SdataService } from './sdata.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ApicompComponent } from './apicomp/apicomp.component';
+import { AdduserComponent } from './adduser/adduser.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { PdfgetComponent } from './pdfget/pdfget.component';
+import { GetxlsComponent } from './getxls/getxls.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,10 @@ import { ApicompComponent } from './apicomp/apicomp.component';
     NavbarComponent,
     StrrevPipe,
     PipesComponent,
-    ApicompComponent
+    ApicompComponent,
+    AdduserComponent,
+    PdfgetComponent,
+    GetxlsComponent
   ],
   imports: [
     HttpClientModule,
@@ -38,7 +45,8 @@ import { ApicompComponent } from './apicomp/apicomp.component';
   providers: [
     SdataService,
     StdDataService,
-    provideClientHydration()
+    provideClientHydration(),
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })
